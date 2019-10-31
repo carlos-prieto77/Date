@@ -20,8 +20,14 @@ public class Date {
 		
 		
 		
-		public Date(int day, int month, int year) {
+		public Date(int day, int month, int year) throws DateException{
+			
+			if((day>0) &&(day<32)) {
 			this.day=day;
+			}else {
+				throw new DateException("Error en la introducion");
+			}
+			
 			this.month=month;
 			this.year=year;
 		}
